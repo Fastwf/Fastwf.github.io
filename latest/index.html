@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Fast Web Framework’s documentation! &mdash; Fast Web Framework stable documentation</title>
+  <title>Fast Web Framework &mdash; Fast Web Framework stable documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -15,10 +15,12 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting started" href="getting-started.html" />
+    <link rel="next" title="Introduction" href="introduction.html" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -39,9 +41,10 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/index.html">Overview</a></li>
 </ul>
 
         </div>
@@ -58,7 +61,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Welcome to Fast Web Framework’s documentation!</li>
+      <li>Fast Web Framework</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -68,16 +71,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="welcome-to-fast-web-framework-s-documentation">
-<h1>Welcome to Fast Web Framework’s documentation!<a class="headerlink" href="#welcome-to-fast-web-framework-s-documentation" title="Permalink to this headline"></a></h1>
+  <section id="fast-web-framework">
+<h1>Fast Web Framework<a class="headerlink" href="#fast-web-framework" title="Permalink to this headline"></a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#initialisation">Initialisation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#settings">Settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="getting-started.html#test-the-application">Test the application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/getting-started.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/life-cycle.html">Life cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="overview/routing.html">Router system</a></li>
 </ul>
 </li>
 </ul>
@@ -85,7 +88,7 @@
 </section>
 <section id="api-documentation">
 <h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline"></a></h1>
-<p>Access to <a class="reference external" href="./api-doc/">documentation</a>.</p>
+<p>Access to <a class="reference external" href="./api-doc/">api documentation</a>.</p>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
@@ -99,7 +102,7 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="getting-started.html" class="btn btn-neutral float-right" title="Getting started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="introduction.html" class="btn btn-neutral float-right" title="Introduction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
@@ -118,7 +121,8 @@
       </div>
     </section>
   </div>
-  <div id="vjs-version" class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Version">
+  <div id="vjs-version" class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Version"
+    data-version-url="version.json" data-versions-url="../versions.json">
   <span class="rst-current-version" data-toggle="rst-current-version">
     <span class="fa fa-book">&nbsp;Read the Docs</span>
     v: (( currentVersion ))

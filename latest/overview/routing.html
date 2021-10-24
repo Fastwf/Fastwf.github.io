@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Router system &mdash; Fast Web Framework stable documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Life cycle" href="life-cycle.html" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Fast Web Framework
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="life-cycle.html">Life cycle</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Router system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#baseroute">BaseRoute</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#constructor">Constructor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lazy-loading">Lazy loading</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mount">Mount</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#route">Route</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fast Web Framework</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Overview</a> &raquo;</li>
+      <li>Router system</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/overview/routing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="router-system">
+<h1>Router system<a class="headerlink" href="#router-system" title="Permalink to this headline"></a></h1>
+<p>There are two different components to use to create your application routes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Fastwf\Core\Router\Mount</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Fastwf\Core\Router\Route</span></code></p></li>
+</ul>
+<section id="baseroute">
+<h2>BaseRoute<a class="headerlink" href="#baseroute" title="Permalink to this headline"></a></h2>
+<section id="constructor">
+<h3>Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Mount</span></code> and <code class="docutils literal notranslate"><span class="pre">Route</span></code> class extends from <code class="docutils literal notranslate"><span class="pre">Fastwf\Core\Router\BaseRoute</span></code> and the constructor require an array parameter which respect
+the next definition:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 11%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">path</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>The path of the route (must not starts with <code class="docutils literal notranslate"><span class="pre">/</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">inputInterceptors</span></code></p></td>
+<td><p>no</p></td>
+<td><p>A function factory or an array of <code class="docutils literal notranslate"><span class="pre">Fastwf\Core\Components\InInterceptor</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">guards</span></code></p></td>
+<td><p>no</p></td>
+<td><p>A function factory or an array of <code class="docutils literal notranslate"><span class="pre">Fastwf\Core\Components\Guard</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">inputPipes</span></code></p></td>
+<td><p>no</p></td>
+<td><p>A function factory or an array of <code class="docutils literal notranslate"><span class="pre">Fastwf\Core\Components\InPipe</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">outputPipes</span></code></p></td>
+<td><p>no</p></td>
+<td><p>A function factory or an array of <code class="docutils literal notranslate"><span class="pre">Fastwf\Core\Components\OutPipe</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">outputInterceptors</span></code></p></td>
+<td><p>no</p></td>
+<td><p>A function factory or an array of <code class="docutils literal notranslate"><span class="pre">Fastwf\Core\Components\OutInterceptor</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></td>
+<td><p>no</p></td>
+<td><p>A uniq name accros all the application</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lazy-loading">
+<h3>Lazy loading<a class="headerlink" href="#lazy-loading" title="Permalink to this headline"></a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">Mount</span></code> and <code class="docutils literal notranslate"><span class="pre">Route</span></code> class allows to declare it’s component using a factory function.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">// Constructor(</span>
+<span class="p">[</span>
+    <span class="s1">&#39;path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;guards&#39;</span> <span class="o">=&gt;</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="p">[</span>
+        <span class="k">new</span> <span class="nx">CustomGuard</span><span class="p">(),</span>
+    <span class="p">];}</span>
+<span class="p">]</span>
+<span class="c1">// )</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">The adventage in that case is that all <code class="docutils literal notranslate"><span class="pre">Route</span></code> and <code class="docutils literal notranslate"><span class="pre">Mount</span></code> components will be instanciated only when usage is required.</div>
+<div class="line">So, when the engine need to access to the property, factory function will be executed and instances can be used.</div>
+</div>
+</section>
+</section>
+<section id="mount">
+<h2>Mount<a class="headerlink" href="#mount" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Mount</span></code> class require an array parameter which respect the <code class="docutils literal notranslate"><span class="pre">BaseRoute</span></code> keys and the next additionnal key:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 72%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">routes</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>A function factory or an array of <code class="docutils literal notranslate"><span class="pre">Route</span></code> and/or <code class="docutils literal notranslate"><span class="pre">Mount</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The <code class="docutils literal notranslate"><span class="pre">Mount</span></code> class allows to define routes and/or mount point and bind them on specific route path.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">// src/RootSettings.php</span>
+
+<span class="k">namespace</span> <span class="nx">Author\App</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Fastwf\Core\Router\Mount</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Fastwf\Core\Router\Route</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Fastwf\Core\Settings\RouteSettings</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Author\App\HelloWorldHandler</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">RootSettings</span> <span class="k">implements</span> <span class="nx">RouteSettings</span>
+<span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getRoutes</span><span class="p">(</span><span class="nv">$engine</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="k">new</span> <span class="nx">Mount</span><span class="p">([</span>
+                <span class="s1">&#39;path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;admin&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;routes&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="c1">// new Route([...]),</span>
+                    <span class="c1">// ...</span>
+                <span class="p">],</span>
+            <span class="p">]),</span>
+        <span class="p">];</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>All routes and mount points defined in <code class="docutils literal notranslate"><span class="pre">routes</span></code> array will match the routes starting with <code class="docutils literal notranslate"><span class="pre">/admin/</span></code> prefix.</p>
+</section>
+<section id="route">
+<h2>Route<a class="headerlink" href="#route" title="Permalink to this headline"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Route</span></code> class require an array parameter which respect the <code class="docutils literal notranslate"><span class="pre">BaseRoute</span></code> keys and the next additionnal keys:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 15%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">methods</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>An array of http methods <code class="docutils literal notranslate"><span class="pre">[&quot;GET&quot;,</span> <span class="pre">&quot;POST&quot;]</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">handler</span></code></p></td>
+<td><p>yes</p></td>
+<td><p>A function factory or an instance of <code class="docutils literal notranslate"><span class="pre">RequestHandler</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>See <a class="reference internal" href="getting-started.html#getting-started-settings"><span class="std std-ref">getting started RootSettings example</span></a> for <code class="docutils literal notranslate"><span class="pre">Route</span></code> usage.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="life-cycle.html" class="btn btn-neutral float-left" title="Life cycle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, David BELBEZE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="vjs-version" class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Version"
+    data-version-url="../version.json" data-versions-url="../../versions.json">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book">&nbsp;Read the Docs</span>
+    v: (( currentVersion ))
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl v-if="versions.length > 1">
+      <dt>Versions</dt>
+      <dd v-for="version in versions" v-if="version !== currentVersion">
+        <a v-bind:href="'../' + version + '/'">(( version ))</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt>Contributing</dt>
+      <dd><a href="https://github.com/Fastwf" target="_blank">GitHub</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+     
+    <script src="../_static/js/version.js"></script>
+
+
+</body>
+</html>
