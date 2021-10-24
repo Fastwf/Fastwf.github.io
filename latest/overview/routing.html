@@ -223,9 +223,9 @@ the next definition:</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">Route</span></code> class require an array parameter which respect the <code class="docutils literal notranslate"><span class="pre">BaseRoute</span></code> keys and the next additionnal keys:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 16%" />
-<col style="width: 15%" />
-<col style="width: 70%" />
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 74%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Property</p></th>
@@ -240,11 +240,15 @@ the next definition:</p>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">handler</span></code></p></td>
 <td><p>yes</p></td>
-<td><p>A function factory or an instance of <code class="docutils literal notranslate"><span class="pre">RequestHandler</span></code></p></td>
+<td><p>A function factory, an instance of <code class="docutils literal notranslate"><span class="pre">RequestHandler</span></code> or a class name</p></td>
 </tr>
 </tbody>
 </table>
 <p>See <a class="reference internal" href="getting-started.html#getting-started-settings"><span class="std std-ref">getting started RootSettings example</span></a> for <code class="docutils literal notranslate"><span class="pre">Route</span></code> usage.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Use factory function when the constructor signature of the request handler is redefined.</p>
+</div>
 </section>
 </section>
 

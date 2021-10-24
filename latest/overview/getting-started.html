@@ -205,7 +205,7 @@ implemented using settings interfaces (<code class="docutils literal notranslate
             <span class="k">new</span> <span class="nx">Route</span><span class="p">([</span>
                 <span class="s1">&#39;path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
                 <span class="s1">&#39;methods&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">],</span>
-                <span class="s1">&#39;handler&#39;</span> <span class="o">=&gt;</span> <span class="k">function</span> <span class="p">(</span><span class="nv">$context</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">new</span> <span class="nx">HelloWorldHandler</span><span class="p">(</span><span class="nv">$context</span><span class="p">);</span> <span class="p">},</span>
+                <span class="s1">&#39;handler&#39;</span> <span class="o">=&gt;</span> <span class="nx">HelloWorldHandler</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
                 <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;hello-world&#39;</span>
             <span class="p">])</span>
         <span class="p">];</span>

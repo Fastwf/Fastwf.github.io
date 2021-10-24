@@ -613,8 +613,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Fastwf\\Core\\Engine\\Run\\Runner\u003A\u003ArunStep\u0028\u0029",
             "name": "runStep",
-            "summary": "",
+            "summary": "Try\u0020to\u0020execute\u0020the\u0020method\u0020on\u0020application\u0020component\u0020using\u0020args.",
             "url": "classes/Fastwf-Core-Engine-Run-Runner.html#method_runStep"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Engine\\Run\\Runner\u003A\u003Ahandle\u0028\u0029",
+            "name": "handle",
+            "summary": "Handle\u0020the\u0020request\u0020using\u0020the\u0020route.",
+            "url": "classes/Fastwf-Core-Engine-Run-Runner.html#method_handle"
         },                {
             "fqsen": "\\Fastwf\\Core\\Engine\\Run\\Runner\u003A\u003AhandleException\u0028\u0029",
             "name": "handleException",
