@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services &mdash; Fast Web Framework stable documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Router system" href="routing.html" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Fast Web Framework
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="getting-started.html">Getting started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="life-cycle.html">Life cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routing.html">Router system</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Services</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#introduction">Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#define-a-service">Define a service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access-to-service">Access to service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#register-service">Register service</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Fast Web Framework</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Overview</a> &raquo;</li>
+      <li>Services</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/overview/services.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="services">
+<h1>Services<a class="headerlink" href="#services" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>A service is an application component instanciated only once by request while engine process client request.</p>
+</section>
+<section id="define-a-service">
+<h2>Define a service<a class="headerlink" href="#define-a-service" title="Permalink to this headline"></a></h2>
+<p>Fast Web Framework defines the base class <code class="docutils literal notranslate"><span class="pre">Service</span></code> that your service must herit from.
+So it’s possible to define the <code class="docutils literal notranslate"><span class="pre">MyService</span></code> like this:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Author\App</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Fastwf\Core\Engine\Service</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyService</span> <span class="k">extends</span> <span class="nx">Service</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getHelloWorld</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// Access to the engine context using $this-&gt;context</span>
+        <span class="k">return</span> <span class="s1">&#39;Hello world!&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default constructor expect an engine context, so it’s possible to use this context anywhere in implemented methods.</p>
+</div>
+</section>
+<section id="access-to-service">
+<h2>Access to service<a class="headerlink" href="#access-to-service" title="Permalink to this headline"></a></h2>
+<p>Any service can be accessed anywhere the engine context is accessible using <code class="docutils literal notranslate"><span class="pre">getService</span></code> method.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>While the service is not requested using <code class="docutils literal notranslate"><span class="pre">getService</span></code> the instance is not created, so each service can be used only when it’s <strong>realy
+required</strong> by application.</p>
+</div>
+<p>The next example allows to access to the service from a custom <code class="docutils literal notranslate"><span class="pre">RequestHandler</span></code>.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Author\App</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Fastwf\Core\Components\RequestHandler</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">MyHandler</span> <span class="k">extends</span> <span class="nx">RequestHandler</span> <span class="p">{</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$service</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">context</span><span class="o">-&gt;</span><span class="na">getService</span><span class="p">(</span><span class="nx">MyService</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+
+        <span class="c1">// Do anything with $service</span>
+        <span class="c1">// ...</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">html</span><span class="p">(</span>
+            <span class="nv">$service</span><span class="o">-&gt;</span><span class="na">getHelloWorld</span><span class="p">()</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<div class="line-block">
+<div class="line">Any service can be requested in any service constructor. It can result in circular dependencies.</div>
+<div class="line">For example <code class="docutils literal notranslate"><span class="pre">A::class</span></code> require <code class="docutils literal notranslate"><span class="pre">B::class</span></code> and <code class="docutils literal notranslate"><span class="pre">B::class</span></code> require <code class="docutils literal notranslate"><span class="pre">A::class</span></code>.</div>
+</div>
+<div class="line-block">
+<div class="line">To prevent this issue it’s recommanded to:</div>
+</div>
+<ul class="simple">
+<li><p>access to the each service directly in the method.</p></li>
+<li><p>If it’s better to access to the service in constructor (performance reasons), control strictly service usage to prevent
+circular dependencies.</p></li>
+</ul>
+</div>
+</section>
+<section id="register-service">
+<h2>Register service<a class="headerlink" href="#register-service" title="Permalink to this headline"></a></h2>
+<p>When a service require more than the engine context the <code class="docutils literal notranslate"><span class="pre">getService</span></code> cannot create the instance of the service. In that case, you must
+register a service by provinding directly the service instance.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Author\App</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Fastwf\Core\Settings\ConfigurationSettings</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">RootSettings</span> <span class="k">implements</span> <span class="nx">RouteSettings</span> <span class="p">{</span>
+
+    <span class="c1">// ...</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">configure</span><span class="p">(</span><span class="nv">$engine</span><span class="p">,</span> <span class="nv">$configuration</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nv">$engine</span><span class="o">-&gt;</span><span class="na">registerService</span><span class="p">(</span>
+            <span class="nx">MyService</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+            <span class="k">new</span> <span class="nx">MyService</span><span class="p">(</span><span class="nv">$engine</span><span class="p">,</span> <span class="s1">&#39;other argument&#39;</span><span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It’s possible to register a service implementation class to be loaded when service interface is requested.</p>
+<div class="line-block">
+<div class="line">For example, the <code class="docutils literal notranslate"><span class="pre">Engine</span></code> register <code class="docutils literal notranslate"><span class="pre">PhpSessionManager</span></code> for <code class="docutils literal notranslate"><span class="pre">SessionService</span></code> interface using</div>
+<div class="line"><code class="docutils literal notranslate"><span class="pre">registerService(SessionService::class,</span> <span class="pre">PhpSessionManager::class)</span></code> call.</div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="routing.html" class="btn btn-neutral float-left" title="Router system" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, David BELBEZE.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div id="vjs-version" class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Version"
+    data-version-url="../version.json" data-versions-url="../../versions.json">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book">&nbsp;Read the Docs</span>
+    v: (( currentVersion ))
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl v-if="versions.length > 1">
+      <dt>Versions</dt>
+      <dd v-for="version in versions" v-if="version !== currentVersion">
+        <a v-bind:href="'../' + version + '/'">(( version ))</a>
+      </dd>
+    </dl>
+    <dl>
+      <dt>Contributing</dt>
+      <dd><a href="https://github.com/Fastwf" target="_blank">GitHub</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+     
+    <script src="../_static/js/version.js"></script>
+
+
+</body>
+</html>

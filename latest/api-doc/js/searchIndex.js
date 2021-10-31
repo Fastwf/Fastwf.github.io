@@ -186,6 +186,31 @@ Search.appendIndex(
             "summary": "Handle\u0020the\u0020request\u0020and\u0020return\u0020the\u0020response\u0020object\u0020to\u0020send\u0020to\u0020the\u0020client.",
             "url": "classes/Fastwf-Core-Components-RequestHandler.html#method_handle"
         },                {
+            "fqsen": "\\Fastwf\\Core\\Components\\RequestHandler\u003A\u003AsetupContentType\u0028\u0029",
+            "name": "setupContentType",
+            "summary": "Inject\u0020the\u0020content\u0020type\u0020when\u0020it\u0027s\u0020not\u0020already\u0020provided.",
+            "url": "classes/Fastwf-Core-Components-RequestHandler.html#method_setupContentType"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Components\\RequestHandler\u003A\u003Ahtml\u0028\u0029",
+            "name": "html",
+            "summary": "Generate\u0020an\u0020HttpResponse\u0020containing\u0020an\u0020html\u0020document\u0020using\u0020the\u0020body\u0020in\u0020parameter.",
+            "url": "classes/Fastwf-Core-Components-RequestHandler.html#method_html"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Components\\RequestHandler\u003A\u003Ajson\u0028\u0029",
+            "name": "json",
+            "summary": "Generate\u0020an\u0020HttpResponse\u0020containing\u0020a\u0020json\u0020document\u0020using\u0020the\u0020serializable\u0020body\u0020in\u0020parameter.",
+            "url": "classes/Fastwf-Core-Components-RequestHandler.html#method_json"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Components\\RequestHandler\u003A\u003Aredirect\u0028\u0029",
+            "name": "redirect",
+            "summary": "Generate\u0020an\u0020HttpResponse\u0020that\u0020redirect\u0020to\u0020given\u0020url.",
+            "url": "classes/Fastwf-Core-Components-RequestHandler.html#method_redirect"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Components\\RequestHandler\u003A\u003ACONTENT_TYPE",
+            "name": "CONTENT_TYPE",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Components-RequestHandler.html#constant_CONTENT_TYPE"
+        },                {
             "fqsen": "\\Fastwf\\Core\\Components\\RequestHandler\u003A\u003A\u0024context",
             "name": "context",
             "summary": "The\u0020engine\u0020context.",
@@ -776,6 +801,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#method___get"
         },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003A__isset\u0028\u0029",
+            "name": "__isset",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#method___isset"
+        },                {
             "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003AgetStream\u0028\u0029",
             "name": "getStream",
             "summary": "Access\u0020to\u0020the\u0020body\u0020of\u0020the\u0020request\u0020thanks\u0020to\u0020resource.",
@@ -800,6 +830,56 @@ Search.appendIndex(
             "name": "BUFFER",
             "summary": "",
             "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_BUFFER"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003AQUERY",
+            "name": "QUERY",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_QUERY"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003AFORM",
+            "name": "FORM",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_FORM"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003ASTREAM",
+            "name": "STREAM",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_STREAM"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003ABODY",
+            "name": "BODY",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_BODY"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003AJSON",
+            "name": "JSON",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_JSON"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003AFILES",
+            "name": "FILES",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_FILES"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003APATH",
+            "name": "PATH",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_PATH"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003AMETHOD",
+            "name": "METHOD",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_METHOD"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003AHEADERS",
+            "name": "HEADERS",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_HEADERS"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003ACOOKIE",
+            "name": "COOKIE",
+            "summary": "",
+            "url": "classes/Fastwf-Core-Http-Frame-HttpRequest.html#constant_COOKIE"
         },                {
             "fqsen": "\\Fastwf\\Core\\Http\\Frame\\HttpRequest\u003A\u003A\u0024_files",
             "name": "_files",
@@ -1598,12 +1678,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Fastwf\\Core\\Session\\PhpSessionManager\u003A\u003AgetSession\u0028\u0029",
             "name": "getSession",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "",
             "url": "classes/Fastwf-Core-Session-PhpSessionManager.html#method_getSession"
         },                {
             "fqsen": "\\Fastwf\\Core\\Session\\PhpSessionManager\u003A\u003AgetLockedSession\u0028\u0029",
             "name": "getLockedSession",
-            "summary": "\u007B\u0040inheritDoc\u007D",
+            "summary": "",
             "url": "classes/Fastwf-Core-Session-PhpSessionManager.html#method_getLockedSession"
         },                {
             "fqsen": "\\Fastwf\\Core\\Session\\PhpSessionManager\u003A\u003AcloseSession\u0028\u0029",
@@ -1618,7 +1698,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Fastwf\\Core\\Session\\Session",
             "name": "Session",
-            "summary": "A\u0020proxy\u0020that\u0020allows\u0020to\u0020access\u0020to\u0020array\u0020values.",
+            "summary": "Session\u0020object\u0020that\u0020allows\u0020to\u0020hold\u0020data\u0020in\u0020session.",
             "url": "classes/Fastwf-Core-Session-Session.html"
         },                {
             "fqsen": "\\Fastwf\\Core\\Session\\Session\u003A\u003A__construct\u0028\u0029",
@@ -1643,7 +1723,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Fastwf\\Core\\Session\\Session\u003A\u003AclearArray\u0028\u0029",
             "name": "clearArray",
-            "summary": "",
+            "summary": "Allows\u0020to\u0020clear\u0020all\u0020data\u0020in\u0020the\u0020array.",
             "url": "classes/Fastwf-Core-Session-Session.html#method_clearArray"
         },                {
             "fqsen": "\\Fastwf\\Core\\Session\\Session\u003A\u003Aclear\u0028\u0029",
@@ -1660,6 +1740,11 @@ Search.appendIndex(
             "name": "applyModifications",
             "summary": "Apply\u0020modifications\u0020observed\u0020to\u0020the\u0020array\u0020in\u0020parameter.",
             "url": "classes/Fastwf-Core-Session-Session.html#method_applyModifications"
+        },                {
+            "fqsen": "\\Fastwf\\Core\\Session\\Session\u003A\u003Arefresh\u0028\u0029",
+            "name": "refresh",
+            "summary": "Allows\u0020to\u0020refresh\u0020the\u0020internal\u0020array\u0020by\u0020replacing\u0020with\u0020the\u0020array\u0020in\u0020parameter.",
+            "url": "classes/Fastwf-Core-Session-Session.html#method_refresh"
         },                {
             "fqsen": "\\Fastwf\\Core\\Session\\Session\u003A\u003A\u0024modified",
             "name": "modified",
@@ -2181,6 +2266,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Fastwf-Devtool-Formatters-HtmlExceptionFormatter.html#property_exception"
         },                {
+            "fqsen": "\\Fastwf\\Twig\\Components\\TwigStarter",
+            "name": "TwigStarter",
+            "summary": "Twig\u0020input\u0020interceptor\u0020that\u0020allows\u0020to\u0020initialize\u0020the\u0020global\u0020context\u0020for\u0020twig\u0020rendering.",
+            "url": "classes/Fastwf-Twig-Components-TwigStarter.html"
+        },                {
+            "fqsen": "\\Fastwf\\Twig\\Components\\TwigStarter\u003A\u003Astart\u0028\u0029",
+            "name": "start",
+            "summary": "Perform\u0020action\u0020before\u0020any\u0020logic\u0020system.",
+            "url": "classes/Fastwf-Twig-Components-TwigStarter.html#method_start"
+        },                {
             "fqsen": "\\Fastwf\\Twig\\Extension\\FrameworkExtension",
             "name": "FrameworkExtension",
             "summary": "",
@@ -2256,6 +2351,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Fastwf-Twig-TwigService.html#method___construct"
         },                {
+            "fqsen": "\\Fastwf\\Twig\\TwigService\u003A\u003AaddGlobal\u0028\u0029",
+            "name": "addGlobal",
+            "summary": "Inject\u0020in\u0020the\u0020global\u0020context\u0020the\u0020key\/value\u0020pair.",
+            "url": "classes/Fastwf-Twig-TwigService.html#method_addGlobal"
+        },                {
             "fqsen": "\\Fastwf\\Twig\\TwigService\u003A\u003AaddPath\u0028\u0029",
             "name": "addPath",
             "summary": "Add\u0020the\u0020root\u0020path\u0020of\u0020templates\u0020files\u0020at\u0020the\u0020end\u0020of\u0020array\u0020of\u0020loaded\u0020root\u0020template\u0020directories.",
@@ -2286,15 +2386,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Fastwf-Twig-TwigService.html#property_loader"
         },                {
+            "fqsen": "\\Fastwf\\Twig\\TwigService\u003A\u003A\u0024arrayLoader",
+            "name": "arrayLoader",
+            "summary": "",
+            "url": "classes/Fastwf-Twig-TwigService.html#property_arrayLoader"
+        },                {
             "fqsen": "\\Fastwf\\Twig\\TwigService\u003A\u003A\u0024environment",
             "name": "environment",
             "summary": "",
             "url": "classes/Fastwf-Twig-TwigService.html#property_environment"
-        },                {
-            "fqsen": "\\Fastwf\\Twig\\TwigService\u003A\u003A\u0024runtimeEnvironment",
-            "name": "runtimeEnvironment",
-            "summary": "",
-            "url": "classes/Fastwf-Twig-TwigService.html#property_runtimeEnvironment"
         },                {
             "fqsen": "\\Fastwf\\Twig\\TwigService\u003A\u003A\u0024extension",
             "name": "extension",
@@ -2435,6 +2535,11 @@ Search.appendIndex(
             "name": "Formatters",
             "summary": "",
             "url": "namespaces/fastwf-devtool-formatters.html"
+        },                {
+            "fqsen": "\\Fastwf\\Twig\\Components",
+            "name": "Components",
+            "summary": "",
+            "url": "namespaces/fastwf-twig-components.html"
         },                {
             "fqsen": "\\Fastwf\\Twig\\Extension",
             "name": "Extension",

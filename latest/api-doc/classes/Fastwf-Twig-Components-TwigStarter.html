@@ -101,14 +101,13 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/fastwf.html">Fastwf</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/fastwf-core.html">Core</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/fastwf-core-utils.html">Utils</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/fastwf-core-utils-logging.html">Logging</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/fastwf-twig.html">Twig</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/fastwf-twig-components.html">Components</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    DefaultLogger
+    TwigStarter
 
     
             <div class="phpdocumentor-element__package">
@@ -120,22 +119,27 @@
     
             <span class="phpdocumentor-element__implements">
             implements
-                            <abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr>                    </span>
+                            <a href="classes/Fastwf-Core-Components-InInterceptor.html"><abbr title="\Fastwf\Core\Components\InInterceptor">InInterceptor</abbr></a>                    </span>
     
-            <span class="phpdocumentor-element__extends">
-            Uses
-                            <abbr title="\Psr\Log\LoggerTrait">LoggerTrait</abbr>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/src/Utils/Logging/DefaultLogger.php"><a href="files/core-src-utils-logging-defaultlogger.html"><abbr title="core/src/Utils/Logging/DefaultLogger.php">DefaultLogger.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="twig/src/Components/TwigStarter.php"><a href="files/twig-src-components-twigstarter.html"><abbr title="twig/src/Components/TwigStarter.php">TwigStarter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">8</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 
     </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Twig input interceptor that allows to initialize the global context for twig rendering.</p>
+
+    <section class="phpdocumentor-description"><p>When this input interceptor is provided for the request flow, TwigStarter inject in the global context the next variables:</p>
+<ul>
+<li>config: the loaded engine configuration.</li>
+<li>metadata: the metadata array proxy.</li>
+<li>request: the current request object.</li>
+<li>session: the non locked session object.</li>
+</ul>
+</section>
 
 
 
@@ -148,8 +152,8 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><abbr title="\Psr\Log\LoggerInterface">LoggerInterface</abbr></dt>
-        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Fastwf-Core-Components-InInterceptor.html"><abbr title="\Fastwf\Core\Components\InInterceptor">InInterceptor</abbr></a></dt>
+        <dd>This interceptor allows to perform actions after the request is created and before the route guard is called.</dd>
     
     
     </dl>
@@ -161,121 +165,25 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -constant -private">
-    <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#constant_INDENTATION">INDENTATION</a>
-    <span>
-        &nbsp;= &quot;    &quot;                    </span>
-</dt>
-<dd></dd>
-
-                <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#property_fp">$fp</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd></dd>
-
-                <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#method___construct">__construct()</a>
+                    <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Fastwf-Twig-Components-TwigStarter.html#method_start">start()</a>
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#method_log">log()</a>
-    <span>
-                        &nbsp;: mixed    </span>
-</dt>
-<dd>{@inheritDoc}</dd>
+<dd>Perform action before any logic system.</dd>
 
         </dl>
 
 
 
         
-    <section class="phpdocumentor-constants">
-        <h3 class="phpdocumentor-elements__header" id="constants">
-            Constants
-            <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#constants" class="headerlink"><i class="fas fa-link"></i></a>
-        </h3>
-                    <article class="phpdocumentor-element -constant -private ">
-    <h4 class="phpdocumentor-element__name" id="constant_INDENTATION">
-        INDENTATION
-        <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#constant_INDENTATION" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/src/Utils/Logging/DefaultLogger.php"><a href="files/core-src-utils-logging-defaultlogger.html"><abbr title="core/src/Utils/Logging/DefaultLogger.php">DefaultLogger.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">11</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-signature phpdocumentor-code ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">INDENTATION</span>
-    = <span class="phpdocumentor-signature__default-value">&quot;    &quot;</span>
-</code>
-
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-            </section>
 
         
-    <section class="phpdocumentor-properties">
-        <h3 class="phpdocumentor-elements__header" id="properties">
-            Properties
-            <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
-        </h3>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -private
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_fp">
-        $fp
-        <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#property_fp" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/src/Utils/Logging/DefaultLogger.php"><a href="files/core-src-utils-logging-defaultlogger.html"><abbr title="core/src/Utils/Logging/DefaultLogger.php">DefaultLogger.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">15</span>
-
-    </aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$fp</span>
-    </code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-            </section>
 
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Fastwf-Twig-Components-TwigStarter.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -283,92 +191,40 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method___construct">
-        __construct()
-        <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_start">
+        start()
+        <a href="classes/Fastwf-Twig-Components-TwigStarter.html#method_start" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/src/Utils/Logging/DefaultLogger.php"><a href="files/core-src-utils-logging-defaultlogger.html"><abbr title="core/src/Utils/Logging/DefaultLogger.php">DefaultLogger.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="twig/src/Components/TwigStarter.php"><a href="files/twig-src-components-twigstarter.html"><abbr title="twig/src/Components/TwigStarter.php">TwigStarter.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">22</span>
 
     </aside>
 
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$filename</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">&#039;php://stderr&#039;</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$filename</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">&#039;php://stderr&#039;</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_log">
-        log()
-        <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#method_log" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="core/src/Utils/Logging/DefaultLogger.php"><a href="files/core-src-utils-logging-defaultlogger.html"><abbr title="core/src/Utils/Logging/DefaultLogger.php">DefaultLogger.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">25</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">{@inheritDoc}</p>
+        <p class="phpdocumentor-summary">Perform action before any logic system.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">log</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$level</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$message</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$context</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">array()</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">start</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$context</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$level</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$message</span>
-                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$context</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">array()</span>            </dt>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>the client http request</p>
+</section>
 
             </dd>
             </dl>
@@ -459,7 +315,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/Fastwf-Core-Utils-Logging-DefaultLogger.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Fastwf-Twig-Components-TwigStarter.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
